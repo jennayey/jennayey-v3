@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Link } from "@nextui-org/link";
 import Project from "./components/project";
 import SideQuest from "./components/sidequest";
@@ -67,7 +66,8 @@ export default function Home() {
               title="May Bike Parking ba?"
               icon="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
               inDevelopment
-              // pLink="https://v2.translate.jennayey.com"
+              hasLink={false}
+              pLink={""}
               linkText="Visit"
               isDeveloper
               isDesigner
@@ -78,6 +78,7 @@ export default function Home() {
               hasLink
               pLink="https://jennayey.itch.io/somber"
               linkText="Play"
+              inDevelopment={false}
               isDeveloper
               isDesigner
             />
@@ -85,6 +86,8 @@ export default function Home() {
               title="Noli Me Tangere: A 3D Game"
               icon="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
               hasLink
+              inDevelopment={false}
+              isDeveloper={false}
               pLink="  https://jennayey.itch.io/nolimetangere"
               linkText="Play"
               isDesigner
