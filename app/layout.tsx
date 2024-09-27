@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jennaleigh Angla",
+  title: "Jennaleigh Angala",
   description: "Lead UX/UI Designer, animator and developer",
 };
 

@@ -5,9 +5,9 @@ import SideQuest from "./components/sidequest";
 
 export default function Home() {
   return (
-    <div className="px-8 py-16 lg:px-16 lg:py-32 min-h-lvh">
+    <div className="px-5 py-16 lg:px-16 lg:py-32 min-h-lvh">
       <main className="flex flex-col lg:flex-row gap-32">
-        <div className="flex flex-col gap-6 w-96">
+        <div className="flex flex-col gap-6 w-full sm:w-96">
           <h4 className="font-display text-2xl font-semibold text-bone">
             Jennaleigh Angala
           </h4>
