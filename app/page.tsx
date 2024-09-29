@@ -1,13 +1,40 @@
 "use client";
 import { Link } from "@nextui-org/link";
 import SideQuest from "./components/sidequest";
-import Projects from "./components/projects";
+import ProjectCard from "./components/projects";
+import { ProjectsList } from "./components/projectList";
+
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function Home() {
   const [projectShow, setProjectShow] = useState(false);
   const toggleProjects = () => setProjectShow(!projectShow);
+
+  const itemVariants: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 },
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.4 } },
+  };
+
+  const listItems = ProjectsList.map((project) => (
+    <motion.li key={project.id} variants={itemVariants}>
+      <ProjectCard
+        title={project.title}
+        icon={project.icon}
+        hasUrl={project.hasUrl}
+        inDevelopment={project.inDevelopment}
+        isDesigner={project.isDesigner}
+        isDeveloper={project.isDeveloper}
+        url={project.url}
+        linkText={project.linkText}
+      />
+    </motion.li>
+  ));
+
   return (
     <div className="px-5 py-16 lg:px-16 lg:py-32 min-h-lvh">
       <main className="flex flex-col lg:flex-row gap-32">
@@ -67,7 +94,6 @@ export default function Home() {
               <div>
                 <motion.div
                   layout
-                  data-projects={projectShow}
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -20, opacity: 0 }}
@@ -80,7 +106,29 @@ export default function Home() {
               </div>
             ) : null}
           </AnimatePresence>
-          <Projects/>
+
+          <motion.div initial={false} animate={projectShow ? "open" : "closed"}>
+            <motion.ul
+              variants={{
+                open: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delayChildren: 0.5,
+                    staggerChildren: 0.08,
+                  },
+                },
+
+                closed: {
+                  opacity: 0,
+                  y: 20,
+                  transition: {},
+                },
+              }}
+            >
+              {listItems}
+            </motion.ul>
+          </motion.div>
         </div>
       </main>
     </div>

@@ -2,6 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProjectsList } from "./projectList";
+import { motion, Variants } from "framer-motion";
+import { ArrowLongRightIcon, LockClosedIcon } from "@heroicons/react/24/solid";
+
+const itemVariants: Variants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 300, damping: 24 },
+  },
+  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};
 
 interface Props {
   title: string;
@@ -13,7 +24,11 @@ interface Props {
   isDeveloper: boolean;
   isDesigner: boolean;
 }
-const ProjectCard = ({
+
+interface projProps {
+  animate: boolean;
+}
+export default function ProjectCard ({
   title,
   icon,
   inDevelopment,
@@ -22,7 +37,7 @@ const ProjectCard = ({
   linkText,
   isDeveloper,
   isDesigner,
-}: Props) => {
+}: Props){
   return (
     <div className="flex flex-row justify-between py-6 border-b border-cement w-full gap-8">
       <div className="flex flex-row justify-start gap-4">
@@ -46,12 +61,13 @@ const ProjectCard = ({
           className="flex flex-row gap-4 font-body"
         >
           <p className="text-small text-bone">{linkText}</p>
-          <p className="text-small text-bone">➡️</p>
+          <ArrowLongRightIcon className="h-5 w-5 text-bone"/>
         </Link>
       ) : (
         <div className="flex flex-row gap-4 font-body">
           <p className="text-small text-cement">Visit Soon</p>
-          <p className="text-small text-cement">🔒</p>
+          <LockClosedIcon className="h-5 w-5 text-cement"/>
+
         </div>
       )}
     </div>
@@ -59,7 +75,7 @@ const ProjectCard = ({
 };
 
 const listItems = ProjectsList.map((project) => (
-  <li key={project.id}>
+  <motion.li key={project.id} variants={itemVariants}>
     <ProjectCard
       title={project.title}
       icon={project.icon}
@@ -70,8 +86,31 @@ const listItems = ProjectsList.map((project) => (
       url={project.url}
       linkText={project.linkText}
     />
-  </li>
+  </motion.li>
 ));
-export default function Projects() {
-  return <ul>{listItems}</ul>;
-}
+// export default function Projects(animate: projProps) {
+//   return (
+//     <motion.div initial={false} animate={animate ? "open" : "closed"}>
+//       <motion.ul
+//         variants={{
+//           open: {
+//             opacity: 1,
+//             y: 0,
+//             transition: {
+//               delayChildren: 0.5,
+//               staggerChildren: 0.08,
+//             },
+//           },
+
+//           closed: {
+//             opacity: 0,
+//             y: 20,
+//             transition: {},
+//           },
+//         }}
+//       >
+//         {listItems}
+//       </motion.ul>
+//     </motion.div>
+//   );
+// }
