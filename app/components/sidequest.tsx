@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLongRightIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 
 interface Props {
   title: string;
@@ -31,8 +32,8 @@ export default function SideQuest({
         className="flex flex-row gap-4 font-body"
       >
         <p className="text-small text-bone">{linkText}</p>
-        <p className="text-small text-bone">➡️</p>
-      </Link>
+        <ArrowLongRightIcon className="h-5 w-5 text-bone"/>
+        </Link>
     </div>
   );
 }

@@ -12,6 +12,17 @@ export const ProjectsList = [
   },
   {
     id: 2,
+    title: "May Bike Parking Ba?",
+    icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
+    inDevelopment: true,
+    hasUrl: false,
+    url: "https://jennayey.itch.io/somber",
+    linkText: "Visit",
+    isDeveloper: true,
+    isDesigner: true,
+  },
+  {
+    id: 3,
     title: "Somber",
     icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
     inDevelopment: false,
@@ -22,14 +33,15 @@ export const ProjectsList = [
     isDesigner: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "Noli Me Tangere",
     icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
     inDevelopment: false,
-    hasUrl: false,
+    hasUrl: true,
     url: "https://jennayey.itch.io/nolimetangere",
     linkText: "Play",
     isDeveloper: false,
     isDesigner: true,
   },
+  
 ];

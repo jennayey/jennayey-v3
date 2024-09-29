@@ -89,46 +89,82 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col gap-16 grow">
-          <AnimatePresence mode="wait">
-            {projectShow ? (
-              <div>
+          <div>
+            <AnimatePresence mode="wait">
+              {projectShow ? (
+                <div>
+                  <motion.div
+                    layout
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={spring}
+                  >
+                    {/* <div className="pb-6 border-b border-cement">
+              <h4 className="font-display text-2xl font-semibold text-bone">
+                Recent & not so recent works
+              </h4>
+            </div> */}
+                  </motion.div>
+                </div>
+              ) : null}
+            </AnimatePresence>
+
+            <motion.div
+              initial={false}
+              animate={projectShow ? "open" : "closed"}
+            >
+              <motion.ul
+                variants={{
+                  open: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delayChildren: 0.5,
+                      staggerChildren: 0.08,
+                    },
+                  },
+
+                  closed: {
+                    opacity: 0,
+                    y: 20,
+                    transition: {},
+                  },
+                }}
+              >
                 <motion.div
-                  layout
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -20, opacity: 0 }}
-                  transition={spring}
+                  variants={itemVariants}
+                  className="pb-6 border-b border-cement"
                 >
                   <h4 className="font-display text-2xl font-semibold text-bone">
-                    Bobo & not so recent works
+                    Recent & not so recent works
                   </h4>
                 </motion.div>
-              </div>
-            ) : null}
-          </AnimatePresence>
+                {listItems}
+                <motion.div
+                  variants={itemVariants}
+                  className="py-6 border-b border-cement"
+                >
+                  <h4 className="font-display text-2xl font-semibold text-bone">
+                    Side quests{" "}
+                  </h4>
+                </motion.div>
+                {/* my sidequests start */}
 
-          <motion.div initial={false} animate={projectShow ? "open" : "closed"}>
-            <motion.ul
-              variants={{
-                open: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    delayChildren: 0.5,
-                    staggerChildren: 0.08,
-                  },
-                },
+                <motion.li variants={itemVariants} className="flex flex-col gap-0">
+                  <SideQuest
+                    title="Bike Kahit Saan"
+                    icon="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+                    description="Uploading cycling shenanigans in Manila"
+                    pLink="https://www.youtube.com/@bikekahitsaan"
+                    linkText="Watch"
+                  />
+                </motion.li>
 
-                closed: {
-                  opacity: 0,
-                  y: 20,
-                  transition: {},
-                },
-              }}
-            >
-              {listItems}
-            </motion.ul>
-          </motion.div>
+                {/* my sidequests end */}
+              </motion.ul>
+            </motion.div>
+          </div>
         </div>
       </main>
     </div>
