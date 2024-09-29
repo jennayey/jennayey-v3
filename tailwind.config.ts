@@ -22,6 +22,12 @@ const config: Config = {
         cement: "#A0A8AA",
         dungeon: "#010301",
       },
+      // keyframes: {
+      //   reveal: {
+      //     '0%': {transform: 'opacity(0)'},
+
+      //   }
+      // },
     },
   },
   plugins: [nextui()],
