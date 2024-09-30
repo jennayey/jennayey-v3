@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Variants } from "framer-motion";
 import { ArrowLongRightIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 
 // const itemVariants: Variants = {
