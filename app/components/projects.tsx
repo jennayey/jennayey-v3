@@ -25,9 +25,7 @@ interface Props {
   isDesigner: boolean;
 }
 
-interface projProps {
-  animate: boolean;
-}
+
 export default function ProjectCard ({
   title,
   icon,
@@ -74,20 +72,20 @@ export default function ProjectCard ({
   );
 };
 
-const listItems = ProjectsList.map((project) => (
-  <motion.li key={project.id} variants={itemVariants}>
-    <ProjectCard
-      title={project.title}
-      icon={project.icon}
-      hasUrl={project.hasUrl}
-      inDevelopment={project.inDevelopment}
-      isDesigner={project.isDesigner}
-      isDeveloper={project.isDeveloper}
-      url={project.url}
-      linkText={project.linkText}
-    />
-  </motion.li>
-));
+// const listItems = ProjectsList.map((project) => (
+//   <motion.li key={project.id} variants={itemVariants}>
+//     <ProjectCard
+//       title={project.title}
+//       icon={project.icon}
+//       hasUrl={project.hasUrl}
+//       inDevelopment={project.inDevelopment}
+//       isDesigner={project.isDesigner}
+//       isDeveloper={project.isDeveloper}
+//       url={project.url}
+//       linkText={project.linkText}
+//     />
+//   </motion.li>
+// ));
 // export default function Projects(animate: projProps) {
 //   return (
 //     <motion.div initial={false} animate={animate ? "open" : "closed"}>

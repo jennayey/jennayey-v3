@@ -1,4 +1,3 @@
-import image from "./../images/scripttranslator-logo.svg"
 export const ProjectsList = [
   {
     id: 1,

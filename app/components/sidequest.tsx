@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLongRightIcon, LockClosedIcon } from "@heroicons/react/24/solid";
+import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 interface Props {
   title: string;
