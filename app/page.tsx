@@ -151,10 +151,13 @@ export default function Home() {
                 </motion.div>
                 {/* my sidequests start */}
 
-                <motion.li variants={itemVariants} className="flex flex-col gap-0">
+                <motion.li
+                  variants={itemVariants}
+                  className="flex flex-col gap-0"
+                >
                   <SideQuest
                     title="Bike Kahit Saan"
-                    icon="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+                    icon="bikekahitsaan-logo"
                     description="Uploading cycling shenanigans in Manila"
                     pLink="https://www.youtube.com/@bikekahitsaan"
                     linkText="Watch"

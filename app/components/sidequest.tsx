@@ -18,9 +18,9 @@ export default function SideQuest({
   linkText,
 }: Props) {
   return (
-    <div className="flex flex-row justify-between py-6 border-b border-cement w-full gap-8">
+    <div className="flex flex-row justify-between flex-start py-6 border-b border-cement w-full gap-8">
       <div className="flex flex-row justify-start gap-4">
-        <Image src={icon} alt={title + " " + "Logo"} width={40} height={40} />
+        <Image src={`/images/${icon}.svg`} alt={title + " " + "Logo"} className="rounded-full h-fit" width={40} height={40} />
         <div className="flex flex-col gap-1 grow">
           <p className="text-base font-body text-bone font-medium">{title}</p>
           <p className="text-sm font-body text-cement">{description}</p>
@@ -29,9 +29,9 @@ export default function SideQuest({
       <Link
         href={pLink}
         target="_blank"
-        className="flex flex-row gap-4 font-body"
+        className="flex flex-row gap-4 font-body h-fit"
       >
-        <p className="text-small text-bone">{linkText}</p>
+        <p className="text-small text-bone h-fit">{linkText}</p>
         <ArrowLongRightIcon className="h-5 w-5 text-bone"/>
         </Link>
     </div>

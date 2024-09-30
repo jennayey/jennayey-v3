@@ -1,8 +1,9 @@
+import image from "./../images/scripttranslator-logo.svg"
 export const ProjectsList = [
   {
     id: 1,
     title: "Philippine Scripts Translator",
-    icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
+    icon: "scripttranslator-logo",
     inDevelopment: false,
     hasUrl: true,
     url: "https://v2.translate.jennayey.com",
@@ -13,7 +14,7 @@ export const ProjectsList = [
   {
     id: 2,
     title: "May Bike Parking Ba?",
-    icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
+    icon: "maybikeparkingba-logo",
     inDevelopment: true,
     hasUrl: false,
     url: "https://jennayey.itch.io/somber",
@@ -24,24 +25,13 @@ export const ProjectsList = [
   {
     id: 3,
     title: "Somber",
-    icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
-    inDevelopment: false,
+icon: "somber-logo",    inDevelopment: false,
     hasUrl: true,
     url: "https://jennayey.itch.io/somber",
     linkText: "Play",
     isDeveloper: true,
     isDesigner: true,
   },
-  {
-    id: 4,
-    title: "Noli Me Tangere",
-    icon: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
-    inDevelopment: false,
-    hasUrl: true,
-    url: "https://jennayey.itch.io/nolimetangere",
-    linkText: "Play",
-    isDeveloper: false,
-    isDesigner: true,
-  },
+ 
   
 ];

@@ -39,9 +39,9 @@ export default function ProjectCard ({
   isDesigner,
 }: Props){
   return (
-    <div className="flex flex-row justify-between py-6 border-b border-cement w-full gap-8">
+    <div className="flex flex-row justify-between py-6 border-b flex-start border-cement w-full gap-8">
       <div className="flex flex-row justify-start gap-4">
-        <Image src={icon} alt={title + " " + "Logo"} width={40} height={40} />
+        <Image src={`/images/${icon}.svg`} className="rounded-full h-fit" alt={title + " " + "Logo"} width={40} height={40} />
         <div className="flex flex-col gap-1 grow">
           <p className="text-base font-body text-bone font-medium">
             {title}
@@ -58,7 +58,7 @@ export default function ProjectCard ({
         <Link
           href={url}
           target="_blank"
-          className="flex flex-row gap-4 font-body"
+          className="flex flex-row gap-4 font-body h-fit"
         >
           <p className="text-small text-bone">{linkText}</p>
           <ArrowLongRightIcon className="h-5 w-5 text-bone"/>
