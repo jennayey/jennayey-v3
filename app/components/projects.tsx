@@ -1,18 +1,17 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ProjectsList } from "./projectList";
-import { motion, Variants } from "framer-motion";
+import { Variants } from "framer-motion";
 import { ArrowLongRightIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 
-const itemVariants: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
+// const itemVariants: Variants = {
+//   open: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { type: "spring", stiffness: 300, damping: 24 },
+//   },
+//   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+// };
 
 interface Props {
   title: string;
